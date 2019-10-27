@@ -1,38 +1,16 @@
-import juego.*
+import pantallainicial.*
 import gameover.*
 import invader.*
 import player.*
 import wollok.game.*
 
-object wollok {
-	var property position = game.at(6,1)
-	var property image = "res/player.gif"
-
-}
-
 program game{
 	game.width(13)
 	game.height(14)
-	game.title("Space Invaders")
 	game.boardGround("res/space.gif")
-	game.addVisualCharacter(player)
-	juego.cargarEnemigos()
-	juego.validarFinal()
-	
-	game.onTick(0, "movimiento",{ player.validar() })
-	game.onTick(0, "impacto",{ player.impactar() })
+	game.title("Space Invaders")
 
-	game.onTick(0, "movimiento",{ player.moverDisparo() })
-	game.onTick(0, "movimiento",{ player.validarDisparo()})
-
-	
-	keyboard.space().onPressDo { player.disparar()}
-	
-	game.whenCollideDo(player, { invader => 
-		game.clear()
-		game.addVisual(gameover)
-	})	
-	
+	pantallaInicial.cargar()
 	game.start()
 	
 }

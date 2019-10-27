@@ -1,4 +1,5 @@
 import Shot.*
+import juego.*
 import wollok.game.*
 
 class Invader {
@@ -6,8 +7,7 @@ class Invader {
 	var property image
 	var property limiteDerecho
 	var property limiteIzquierdo
-	var property disparos = []
-	
+	var property disparo = new ShotInvader(position, "res/bomb.png")			
 	
 	constructor(_position,_image){
 		position = _position
@@ -30,21 +30,26 @@ class Invader {
 	method cambiarImagen()
 	
 	method disparar(){
-		if(disparos.size() < 3 && game.hasVisual(self)){
-			var disparo = new ShotInvader(position.down(1), "res/bomb.png")			
-			disparos.add(disparo)		
+		if(!game.hasVisual(disparo) && game.hasVisual(self)){
+			disparo.position(self.position().down(1))
 			game.addVisual(disparo)
 		}	
 		else{
 			
 		}
 	}
-	
-	
+
 	method moverDisparo() {
-		if(!disparos.isEmpty())
-			disparos.forEach({ disparo => disparo.mover(disparo)}) 
+		if(game.hasVisual(disparo))
+			disparo.mover(disparo) 
 	}
+
+	method validarDisparo() {
+		if(game.hasVisual(disparo))
+			disparo.validar() 
+	}
+	
+	method win() = position.y() == 1
 	
 }
 
