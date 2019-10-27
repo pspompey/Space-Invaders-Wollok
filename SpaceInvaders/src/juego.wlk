@@ -6,65 +6,33 @@ import gameover.*
 
 object juego {
 
-	var dificultad = 5000
-		
-	var invaders1 = [
-		new Invader1 (game.at(2,10), "res/invader1.gif"), 
-		new Invader1 (game.at(3,10), "res/invader1.gif"), 
-		new Invader1 (game.at(4,10), "res/invader1.gif"), 
-		new Invader1 (game.at(5,10), "res/invader1.gif"),
-		new Invader1 (game.at(6,10), "res/invader1.gif"),
-		new Invader1 (game.at(7,10), "res/invader1.gif"),
-		new Invader1 (game.at(8,10), "res/invader1.gif"),
-		new Invader1 (game.at(9,10), "res/invader1.gif"),
-		new Invader1 (game.at(10,10), "res/invader1.gif"),
-		new Invader1 (game.at(11,10), "res/invader1.gif")
-	]
-	
-	var invaders2 = [
-		new Invader2 (game.at(2,11), "res/invader3.gif"), 
-		new Invader2 (game.at(3,11), "res/invader3.gif"), 
-		new Invader2 (game.at(4,11), "res/invader3.gif"), 
-		new Invader2 (game.at(5,11), "res/invader3.gif"),
-		new Invader2 (game.at(6,11), "res/invader3.gif"),
-		new Invader2 (game.at(7,11), "res/invader3.gif"),
-		new Invader2 (game.at(8,11), "res/invader3.gif"),
-		new Invader2 (game.at(9,11), "res/invader3.gif"),
-		new Invader2 (game.at(10,11), "res/invader3.gif"),
-		new Invader2 (game.at(11,11), "res/invader3.gif")
-	]
-	
-	var invaders3 = [
-		new Invader3 (game.at(2,12), "res/ufo0.gif"), 
-		new Invader3 (game.at(3,12), "res/ufo0.gif"), 
-		new Invader3 (game.at(4,12), "res/ufo0.gif"), 
-		new Invader3 (game.at(5,12), "res/ufo0.gif"),
-		new Invader3 (game.at(6,12), "res/ufo0.gif"),
-		new Invader3 (game.at(7,12), "res/ufo0.gif"),
-		new Invader3 (game.at(8,12), "res/ufo0.gif"),
-		new Invader3 (game.at(9,12), "res/ufo0.gif"),
-		new Invader3 (game.at(10,12), "res/ufo0.gif"),
-		new Invader3 (game.at(11,12), "res/ufo0.gif")
-	]
+	var dificultad = 5000	
+	var invaders1 = []
+	var invaders2 = []
+	var invaders3 = []
 
 	method cargarEnemigos() {
-			
-		invaders1.forEach { invader => game.addVisual(invader) }
-		invaders1.forEach { invader => 
+		10.times({i => 
+			invaders1.add(new Invader1 (game.at(i+1,10), "res/invader1.gif"))
+			invaders2.add(new Invader2 (game.at(i+1,11), "res/invader3.gif"))
+			invaders3.add(new Invader3 (game.at(i+1,12), "res/ufo0.gif"))
+		})
+		
+		invaders1.forEach { 
+			invader => game.addVisual(invader) 
 			game.onTick(dificultad, "movimiento",{ invader.mover() })
 			game.onTick(500, "movimiento",{ invader.moverDisparo() })
 			game.onTick(500, "movimiento",{ invader.validarDisparo() })
 		}
 		
-		invaders2.forEach { invader => game.addVisual(invader) }
-		invaders2.forEach { invader => 
+		invaders2.forEach { 
+			invader => game.addVisual(invader) 
 			game.onTick(dificultad, "movimiento",{ invader.mover() })
 			game.onTick(500, "movimiento",{ invader.moverDisparo() })
 			game.onTick(500, "movimiento",{ invader.validarDisparo() })
 		}
 		
-		invaders3.forEach { invader => game.addVisual(invader) }
-		invaders3.forEach { invader => 
+		invaders3.forEach { invader => game.addVisual(invader)
 			game.onTick(dificultad, "movimiento",{ invader.mover() })
 			game.onTick(500, "movimiento",{ invader.moverDisparo() })
 			game.onTick(500, "movimiento",{ invader.validarDisparo() })
@@ -96,7 +64,7 @@ object juego {
 	
 	method eliminarEnemigo(enemigo){
 		if(invaders1.contains(enemigo)){
-			(invaders1+invaders2+invaders3).remove(enemigo)
+			invaders1.remove(enemigo)
 		}else{
 			if(invaders2.contains(enemigo)){
 				invaders2.remove(enemigo)
@@ -108,14 +76,14 @@ object juego {
 	}
 	
 	method validarFinal() {
-		game.onTick(500, "ganar",{ 
+		game.onTick(0, "ganar",{ 
 			if((invaders1+invaders2+invaders3).isEmpty()){
 				game.clear()
 				game.addVisual(gameover)
 			}
 		})	
 		
-		game.onTick(500, "perder",{ 
+		game.onTick(0, "perder",{ 
 			if((invaders1+invaders2+invaders3).any({invader => invader.win()})){
 				game.clear()
 				game.addVisual(gameover)
@@ -125,8 +93,8 @@ object juego {
 
 	method validarDificultad() {
 		game.onTick(500, "dificultad",{ 
-			if(invaders1.size()+invaders2.size()+invaders3.size() < 15){
-				dificultad = 2000
+			if((invaders1)+(invaders2)+(invaders3).size() < 15){
+				dificultad = 50
 			}
 		})	
 	}

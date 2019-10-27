@@ -9,6 +9,10 @@ class Shot {
 		image = _imagen
 	}
 	
+	method position(_position){
+		position = _position	
+	}
+	
 	method validar() {
 		if (self.fueraDeEscena())
 			game.removeVisual(self)
