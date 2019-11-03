@@ -93,7 +93,7 @@ object juego {
 
 	method validarDificultad() {
 		game.onTick(500, "dificultad",{ 
-			if((invaders1)+(invaders2)+(invaders3).size() < 15){
+			if((invaders1+invaders2+invaders3).size() < 15){
 				dificultad = 50
 			}
 		})	
