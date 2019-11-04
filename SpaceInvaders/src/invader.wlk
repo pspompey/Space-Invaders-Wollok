@@ -49,12 +49,13 @@ class Invader {
 			disparo.validar() 
 	}
 	
-	method win() = position.y() == 1
+	method win() = position.y() == 0
 	
 }
 
 
 class Invader1 inherits Invader{
+	const property puntos = 50
 	
 	override method cambiarImagen() {
 		if (image.equals("res/invader1.gif")) 
@@ -67,6 +68,7 @@ class Invader1 inherits Invader{
 }
 
 class Invader2 inherits Invader{
+	const property puntos = 100
 	
 	override method cambiarImagen() {
 		if (image.equals("res/invader3.gif")) 
@@ -79,6 +81,7 @@ class Invader2 inherits Invader{
 }
 
 class Invader3 inherits Invader{
+	const property puntos = 150
 	
 	var anterior = "res/ufo0.gif"
 	

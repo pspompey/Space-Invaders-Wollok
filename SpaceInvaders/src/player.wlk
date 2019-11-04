@@ -6,7 +6,6 @@ object player {
 	var property position = game.at(6,0)
 	var property image = "res/player.gif"
 	var property disparo = null
-	
 
 	method validar(){
 		if (position.y() > 0) 
@@ -15,6 +14,7 @@ object player {
 	
 	method disparar() {
 		if(disparo == null || !game.hasVisual(disparo)){
+			game.sound("res/photon.wav")
 			disparo = new ShotPlayer(position.up(1), "res/shot1.gif")			
 			game.addVisual(disparo)		
 		}	
@@ -41,6 +41,7 @@ object player {
 		})		
 		}	
 	}
+
 	
 }
 

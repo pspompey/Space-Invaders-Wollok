@@ -1,5 +1,6 @@
 import wollok.game.*
 import juego.*
+import Level.*
 
 object pantallaInicial {
 	
@@ -9,8 +10,10 @@ object pantallaInicial {
 	method cargar(){
 		game.addVisual(self)	
 	
-		keyboard.enter().onPressDo {
-			juego.comenzar()							
+		keyboard.space().onPressDo {
+			game.clear()
+			game.addVisual(new Level("res/level1.png"))
+			game.onTick(500, "comenzar",{ juego.comenzar() })			
 		}
 	}
 }
