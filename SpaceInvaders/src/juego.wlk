@@ -13,7 +13,7 @@ object juego {
 		if(nivel.allInvaders().contains(enemigo)){
 			game.sound("res/explosion.wav")
 			score += enemigo.puntos()
-			levelOne.removeInvader(enemigo)
+			nivel.removeInvader(enemigo)
 		}
 		game.removeVisual(enemigo)
 	}
@@ -26,7 +26,7 @@ object juego {
 		})	
 
 		game.onTick(0, "perder",{ 
-			if(!nivel.allInvaders().isEmpty() && nivel.allInvaders().any({invader => invader.win()})){
+			if(nivel.allInvaders().any({invader => invader.win()})){
 				gameover.cargar()
 			}
 		})	
