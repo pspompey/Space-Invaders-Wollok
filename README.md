@@ -13,7 +13,7 @@ Para comenzar presione **enter**
 
 - Presionar **espacio** para disparar
 
-##### Inicio
+##### Fin
  ![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/res/gameover.png)
 
 - Para volver a jugar presione **r**
