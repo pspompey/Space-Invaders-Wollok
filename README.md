@@ -1,3 +1,6 @@
+# Desarrollado por
+Pompey Pablo - Alumno de ingeniera en Sistema de Información UTN-FRBA y ayudante de cátedra en PdeP
+
 # Space-Invaders-Wollok
 
  ![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/res/PantallaPrincipal.PNG)
@@ -14,7 +17,7 @@ Para comenzar presione **enter**
 - Presionar **espacio** para disparar
 
 ##### Fin
- ![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/res/gameover.png)
+ ![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/res/gameover.jpg)
 
 - Para volver a jugar presione **r**
 
@@ -22,4 +25,14 @@ Para comenzar presione **enter**
 
 
 # Screenshots
+![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/ScreenShots/inicio.png)
+
+![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/ScreenShots/level1.png)
+
+![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/ScreenShots/level1_funcionando.png)
+
+![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/ScreenShots/level2.png)
+
+![](https://github.com/jyp2712/Space-Invaders-Wollok/blob/master/SpaceInvaders/src/ScreenShots/perdedor.png)
+
 
