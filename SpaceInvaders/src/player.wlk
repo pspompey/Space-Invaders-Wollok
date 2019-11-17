@@ -18,9 +18,6 @@ object player {
 			disparo = new ShotPlayer(position.up(1), "res/shot1.gif")			
 			game.addVisual(disparo)		
 		}	
-		else{
-			
-		}	
 	}
 	
 	method moverDisparo() {

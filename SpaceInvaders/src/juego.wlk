@@ -45,10 +45,10 @@ object juego {
 		game.addVisualCharacter(player)
 		
 		nivel.cargarEnemigos()
-		nivel.cargarReglas()
 		self.validarFinal()
 		self.validarDificultad()
-		
+
+		nivel.cargarReglas()		
 		game.onTick(0, "validar",{ player.validar() })
 		game.onTick(0, "impactar",{ player.impactar() })
 
