@@ -8,8 +8,10 @@ Pompey Pablo - Alumno de ingeniera en Sistema de Información UTN-FRBA y ayudant
  ### Instrucciones
 
 ##### Inicio
-Para comenzar presione **enter** 
 
+Para comenzar el juego ejecutar el game.wpgm
+
+En la pantalla de inicio presione **enter** para comenzar
 
  ## Controles
 - Usá las **flechas** para mover la nave
