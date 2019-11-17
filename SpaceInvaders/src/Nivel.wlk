@@ -74,17 +74,17 @@ object levelOne inherits Nivel{
 	override method cargarEnemigos() {
 		dificultad = 8000
 		
-		10.times({i => 
-			invaders1.add(new Invader1 (game.at(i+1,10), "res/invader1.gif"))
-			invaders2.add(new Invader2 (game.at(i+1,11), "res/invader3.gif"))
-			invaders3.add(new Invader3 (game.at(i+1,12), "res/ufo0.gif"))
+		11.times({i => 
+			invaders1.add(new Invader1 (game.at(i+1,9), "res/invader1.gif"))
+			invaders2.add(new Invader2 (game.at(i+1,10), "res/invader3.gif"))
+			invaders3.add(new Invader3 (game.at(i+1,11), "res/ufo0.gif"))
 		})
 		super()
 
 	}
 	
 	override method aumentarDificultad() {
-		dificultad = 2000
+		dificultad = 1000
 	}
 	
 	override method finalizar(){
@@ -105,10 +105,10 @@ object levelTwo inherits Nivel{
 	override method cargarEnemigos() {
 		dificultad = 2000
 		
-		6.times({i => 
-			invaders1.add(new Invader1 (game.at(i+3,7), "res/invader1.gif"))
-			invaders2.add(new Invader2 (game.at(i+3,8), "res/invader3.gif"))
-			invaders3.add(new Invader3 (game.at(i+3,9), "res/ufo0.gif"))
+		7.times({i => 
+			invaders1.add(new Invader1 (game.at(i+3,6), "res/invader1.gif"))
+			invaders2.add(new Invader2 (game.at(i+3,7), "res/invader3.gif"))
+			invaders3.add(new Invader3 (game.at(i+3,8), "res/ufo0.gif"))
 		})
 		super()
 
@@ -158,7 +158,7 @@ object levelThree inherits Nivel{
 	}
 	
 	override method aumentarDificultad() {
-		dificultad = 6000
+		dificultad = 500
 	}
 	
 	override method finalizar(){

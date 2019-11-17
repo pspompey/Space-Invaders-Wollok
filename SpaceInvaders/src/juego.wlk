@@ -34,7 +34,7 @@ object juego {
 
 	method validarDificultad() {
 		game.onTick(500, "dificultad",{ 
-			if(nivel.allInvaders().size() < 15){
+			if(nivel.allInvaders().size() < 10){
 				nivel.aumentarDificultad()
 			}
 		})	

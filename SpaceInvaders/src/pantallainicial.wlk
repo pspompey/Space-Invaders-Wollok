@@ -4,7 +4,7 @@ import Level.*
 
 object pantallaInicial {
 	
-	var property position = game.at(1,4)
+	var property position = game.at(2,4)
 	var property image = "res/PantallaPrincipal.PNG"	
 
 	method cargar(){

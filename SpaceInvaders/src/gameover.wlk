@@ -4,13 +4,14 @@ import Level.*
 import juego.*
 
 object gameover {
-	var property position = game.at(4,5)
-	var property image = "res/gameover.png"
+	var property position = game.at(4,6)
+	var property image = "res/gameover.jpg"
 	
 	method cargar(){
 		game.clear()
 		game.addVisual(self)	
 		game.addVisual(player)
+	
 		game.onTick(0, "puntuación",{
 			game.say(player, "Tu puntuación es: " + juego.score().toString())
 		})

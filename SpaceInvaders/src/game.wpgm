@@ -5,7 +5,7 @@ import player.*
 import wollok.game.*
 
 program game{
-	game.width(13)
+	game.width(14)
 	game.height(14)
 	game.boardGround("res/space.gif")
 	game.title("Space Invaders")
